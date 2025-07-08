@@ -1,0 +1,8 @@
+<div class="container">
+    <h1>Home Page</h1>
+    <p *ngIf="x"> {{ msg + ' 1CINFO1' }} </p>
+    <p> {{ 5 + 2 + getA() }} </p>
+    <p> {{ text }} </p>
+    <input type="text" class="form-control" [(ngModel)]="text" >
+    <button class="btn btn-primary" (click)="fillText()" [disabled]="x" >Click me</button>
+</div>
