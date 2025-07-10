@@ -1,0 +1,15 @@
+<div class="container">
+    <h1>Residence List</h1>
+    <div class="row">
+        <div class="col-3" *ngFor="let residence of listResidences">
+            <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"> {{ residence.name }} </h5>
+                <p class="card-text"> {{ residence.status}} </p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
