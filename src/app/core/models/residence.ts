@@ -4,4 +4,5 @@ name!: string;
 address!: string;
 image!: string;
 status!: string
+showAddress!: boolean;
 }
