@@ -1,0 +1,75 @@
+<div class="container">
+    <h1>Add Apartment</h1>
+    <div>
+        <form [formGroup]="addApartmentForm">
+        <div class="mb-3">
+            <label for="exampleInputApartment Number1" class="form-label">Apartment Number</label>
+            <input type="number" class="form-control" formControlName="apartNum" id="exampleInputApartment Number1">
+            <p class="alert alert-danger m-2" *ngIf="apartNum?.errors?.['required'] && apartNum?.touched" >Apartment Number is required.</p>
+            <p class="alert alert-danger m-2" *ngIf="apartNum?.errors?.['min'] && apartNum?.touched" >Apartment Number must be a positive number.</p>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputFloorNumber1" class="form-label">Floor Number</label>
+            <input type="number" class="form-control" formControlName="floorNum" id="exampleInputFloorNumber1">
+            <p class="alert alert-danger m-2" *ngIf="floorNum?.errors?.['required'] && floorNum?.dirty" >Floor Number is required.</p>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputSurface" class="form-label">Surface</label>
+            <input type="number" class="form-control" formControlName="surface" id="exampleInputSurface">
+            <p class="alert alert-danger m-2" *ngIf="surface?.errors?.['required'] && surface?.dirty" >Surface is required.</p>
+        </div>
+        <div class="mb-3">
+            <label for="terraceDefault1" class="form-label">Terrace</label>
+            <div >
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="terrace" formControlName="terrace" value="true" id="terraceDefault1">
+                <label class="form-check-label" for="terraceDefault1">
+                    Yes
+                </label>
+                </div>
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="terrace" formControlName="terrace" value="false" id="terraceDefault2">
+                <label class="form-check-label" for="terraceDefault2">
+                    No
+                </label>
+            </div>
+        </div>
+        </div>
+        <div class="mb-3" *ngIf="terrace?.value=='true'">
+            <label for="exampleInputSurfaceTerrace" class="form-label">Surface Terrace</label>
+            <input type="number" class="form-control" formControlName="surfaceterrace" id="exampleInputSurfaceTerrace">
+            <p class="alert alert-danger m-2" *ngIf="surfaceterrace?.errors?.['required'] && surfaceterrace?.dirty" >Surface Terrace is required.</p>
+        </div>
+        <div class="mb-3">
+            <label for="categoryDefault1" class="form-label">Category</label>
+            <div >
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="category" formControlName="category" value="S+1" id="categoryDefault1">
+                <label class="form-check-label" for="categoryDefault1">
+                    S+1
+                </label>
+                </div>
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="category" formControlName="category" value="S+2" id="categoryDefault2">
+                <label class="form-check-label" for="categoryDefault2">
+                    S+2
+                </label>
+                </div>
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="category" formControlName="category" value="S+3" id="categoryDefault3">
+                <label class="form-check-label" for="categoryDefault3">
+                    S+3
+                </label>
+                </div>
+        </div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputResidence" class="form-label">Residence</label>
+            <input type="number" class="form-control" formControlName="ResidenceId" id="exampleInputResidence">
+            <p class="alert alert-danger m-2" *ngIf="ResidenceId?.errors?.['required'] && ResidenceId?.dirty" >Residence is required.</p>
+        </div>
+        <button type="submit" class="btn btn-primary m-1" [disabled]="addApartmentForm.invalid" (click)="addApartment()" >Add</button>
+        <input type="reset" class="btn btn-primary">
+        </form>
+    </div>
+</div>

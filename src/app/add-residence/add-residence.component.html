@@ -1,0 +1,19 @@
+<div class="container">
+    <h1>Add Residence</h1>
+    <div>
+        <form [formGroup]="addResidenceForm">
+        <div class="mb-3">
+            <label for="exampleInputName1" class="form-label">Name</label>
+            <input type="text" class="form-control" formControlName="name" id="exampleInputName1">
+            <p class="alert alert-danger m-2" *ngIf="addResidenceForm.get('name')?.errors?.['required'] && addResidenceForm.get('name')?.touched" >Name is required.</p>
+            <p class="alert alert-danger m-2" *ngIf="addResidenceForm.get('name')?.errors?.['minlength'] && addResidenceForm.get('name')?.touched" >Name must have at least 3 characters.</p>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputAddress1" class="form-label">Address</label>
+            <input type="text" class="form-control" formControlName="address" id="exampleInputAddress1">
+            <p class="alert alert-danger m-2" *ngIf="address?.errors?.['required'] && address?.dirty" >Address is required.</p>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="addResidenceForm.invalid" (click)="addResidence()" >Add</button>
+        </form>
+    </div>
+</div>

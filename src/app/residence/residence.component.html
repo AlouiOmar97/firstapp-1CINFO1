@@ -1,17 +1,43 @@
 <div class="container">
     <h1>Residence List</h1>
+    <a class="btn btn-link" routerLink="/residence/add">Add Residence</a>
+    <input type="text" class="form-control" placeholder="Search a residence" [(ngModel)]="search">
     <div class="row">
-        <div class="col-3 m-1" *ngFor="let residence of listResidences; let i=index;">
-            <div class="card" style="width: 18rem;">
-            <img [src]="residence.image" height="200px" class="card-img-top" alt="{{ residence.name }}">
-            <div class="card-body">
-                <h5 class="card-title"> {{ residence.name }} </h5>
-                <p class="card-text"> {{ residence.status}} </p>
-                <p class="card-text" *ngIf="residence.showAddress" > {{ residence.address}} </p>
-                <a class="btn btn-primary" (click)="showAddress(i)" > 
-                    {{ residence.showAddress ? "Hide Location" : "Show Location"}} </a>
+            <div class="col-3 m-1" *ngFor="let residence of listResidences; let i=index;">
+                <div *ngIf="search == residence.address || search == ''" class="card" style="width: 18rem;">
+                <img [src]="residence.image" height="200px" class="card-img-top" alt="{{ residence.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ residence.name }} </h5>
+                    <p class="card-text"><b>Status : </b> 
+                    <span *ngIf="residence.status=='Disponible'" ><i class="bi bi-check-square-fill"></i></span>
+                    <span *ngIf="residence.status=='En Construction'" ><i class="bi bi-hammer"></i></span>
+                    <span *ngIf="residence.status=='Vendu'" ><i class="bi bi-x-square-fill"></i></span>
+                        {{ residence.status}} </p>
+                    <p class="card-text" *ngIf="residence.showAddress" ><b>Address : </b> {{ residence.address}} </p>
+                    <a class="btn btn-primary" (click)="showAddress(i)" > 
+                        {{ residence.showAddress ? "Hide Location" : "Show Location"}} </a>
+                    <button type="button" class="btn btn-outline-danger m-1" (click)="addToFavorite(residence)" >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"></path>
+                    </svg>
+                    Like
+                </button>
+                <a class="btn btn-warning" [routerLink]="['/residence/details/',residence.id]">Details</a>
+                </div>
+                </div>
             </div>
-            </div>
+    </div>
+    <div>
+        <h1>Favorite List</h1>
+        <div *ngFor="let residence of favoriteList">
+            <img [src]="residence.image"  class="card-img-top" alt="{{ residence.name }}">
+            <p><b>Name : </b> {{ residence.name }} </p>
+            <p><b>Address : </b> {{ residence.address}}</p>
+            <p class="card-text"><b>Status : </b> 
+                  <span *ngIf="residence.status=='Disponible'" ><i class="bi bi-check-square-fill"></i></span>
+                  <span *ngIf="residence.status=='En Construction'" ><i class="bi bi-hammer"></i></span>
+                  <span *ngIf="residence.status=='Vendu'" ><i class="bi bi-x-square-fill"></i></span>
+                    {{ residence.status}} </p>
         </div>
     </div>
 </div>

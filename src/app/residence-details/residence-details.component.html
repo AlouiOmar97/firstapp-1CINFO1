@@ -1,0 +1,19 @@
+<div class="container">
+    <h1>Residence Details</h1>
+    <div>
+            <img [src]="residence.image"  class="card-img-top" alt="{{ residence.name }}">
+            <p><b>ID : </b> {{ id }}</p>
+            <p><b>Name : </b> {{ residence.name | uppercase}} </p>
+            <p><b>Address : </b> {{ residence.address}}</p>
+            <p class="card-text"><b>Status : </b> 
+                  <span *ngIf="residence.status=='Disponible'" ><i class="bi bi-check-square-fill"></i></span>
+                  <span *ngIf="residence.status=='En Construction'" ><i class="bi bi-hammer"></i></span>
+                  <span *ngIf="residence.status=='Vendu'" ><i class="bi bi-x-square-fill"></i></span>
+                    {{ residence.status}} </p>
+            <div>
+                <a class="btn btn-primary m-1" routerLink="/residence/add">Add Residence</a>
+                <a class="btn btn-success" [routerLink]="['/residence/update/', id]">Update Residence</a>
+            </div>
+    </div>
+    <button (click)="returnToList()" class="btn btn-link"><i class="bi bi-arrow-return-left"></i>Return To List</button>
+</div>
