@@ -14,4 +14,20 @@ export class ResidenceService {
   getAllResidences(): Observable<Residence[]>{
     return this.http.get<Residence[]>(this.apiURL);
   }
+
+  getResidenceById(id: string): Observable<Residence>{
+    return this.http.get<Residence>(this.apiURL+id)
+  }
+
+  createResidence(residence: Residence): Observable<Residence>{
+    return this.http.post<Residence>(this.apiURL, residence)
+  }
+
+  updateResidence(id: string, residence: Residence): Observable<Residence>{
+    return this.http.put<Residence>(this.apiURL+id, residence)
+  }
+
+  deleteResidence(id: string): Observable<Residence>{
+    return this.http.delete<Residence>(this.apiURL+id)
+  }
 }

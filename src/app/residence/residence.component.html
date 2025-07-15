@@ -23,6 +23,8 @@
                     Like
                 </button>
                 <a class="btn btn-warning" [routerLink]="['/residence/details/',residence.id]">Details</a>
+                <a class="btn btn-success" [routerLink]="['/residence/update/',residence.id]">Update</a>
+                <button class="btn btn-danger" (click)="deleteResidence(residence.id)" >Delete</button>
                 </div>
                 </div>
             </div>

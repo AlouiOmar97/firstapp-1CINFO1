@@ -11,15 +11,15 @@ export class ResidenceComponent {
   favoriteList: Residence[]=[]
   search: string=''
   listResidences:Residence[]=[
-  {id:1,"name": "El fel","address":"Borj Cedria",
+  {id:"1","name": "El fel","address":"Borj Cedria",
   "image":"../../assets/images/R1.jpg", status: "Disponible", "showAddress": false},
-  {id:2,"name": "El yasmine",
+  {id:"2","name": "El yasmine",
   "address":"Ezzahra","image":"../../assets/images/R2.jpg", status:
   "Disponible", "showAddress": false },
-  {id:3,"name": "El Arij",
+  {id:"3","name": "El Arij",
   "address":"Rades","image":"../../assets/images/R3.jpg", status:
   "Vendu", "showAddress": false},
-  {id:4,"name": "El Anber","address":"inconnu",
+  {id:"4","name": "El Anber","address":"inconnu",
   "image":"../../assets/images/R4.jpg", status: "En Construction", "showAddress": true}
   ];
 
@@ -28,6 +28,15 @@ export class ResidenceComponent {
   ngOnInit(){
     this.residenceSerivce.getAllResidences().subscribe((data)=>{
       this.listResidences = data
+    })
+  }
+
+  deleteResidence(id: string){
+    this.residenceSerivce.deleteResidence(id).subscribe(()=>{
+      console.log("Residence Deleted !")
+      this.residenceSerivce.getAllResidences().subscribe((data)=>{
+      this.listResidences = data
+    })
     })
   }
 

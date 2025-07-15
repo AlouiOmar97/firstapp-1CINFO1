@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Residence } from '../core/models/residence';
 import { Router } from '@angular/router';
+import { ResidenceService } from '../services/residence.service';
 
 @Component({
   selector: 'app-add-residence',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class AddResidenceComponent {
   residence: Residence={
-    id: 0,
+    id: "",
     name: "",
     address: "",
     status: "",
@@ -18,11 +19,14 @@ export class AddResidenceComponent {
     showAddress: false
   }
   addResidenceForm!: FormGroup
-  constructor(private router: Router){}
+  constructor(private router: Router, private residenceService: ResidenceService){}
   ngOnInit(){
     this.addResidenceForm= new FormGroup({
       name: new FormControl(this.residence.name, [Validators.required, Validators.minLength(3)]),
-      address: new FormControl(this.residence.address, Validators.required)
+      address: new FormControl(this.residence.address, Validators.required),
+      status: new FormControl(false),
+      image: new FormControl("../../assets/images/R2.jpg"),
+      showAddress: new FormControl(false)
     })
   }
 
@@ -30,6 +34,9 @@ export class AddResidenceComponent {
 
   addResidence(){
     console.log(this.addResidenceForm.value);
-    this.router.navigateByUrl('/residence')
+    this.residenceService.createResidence(this.addResidenceForm.value).subscribe(()=>{
+      console.log("Residence added !");
+      this.router.navigateByUrl('/residence')
+    })
   }
 }

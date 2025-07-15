@@ -1,5 +1,5 @@
 export class Residence {
-id!: number;
+id!: string;
 name!: string;
 address!: string;
 image!: string;

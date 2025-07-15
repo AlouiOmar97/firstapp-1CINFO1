@@ -1,15 +1,45 @@
 {
-    "residence": [
-  {"id":1,"name": "El fel DB","address":"Borj Cedria",
-  "image":"../../assets/images/R1.jpg", "status": "Disponible", "showAddress": false},
-  {"id":2,"name": "El yasmine DB",
-  "address":"Ezzahra","image":"../../assets/images/R2.jpg", "status":
-  "Disponible", "showAddress": false },
-  {"id":3,"name": "El Arij DB",
-  "address":"Rades","image":"../../assets/images/R3.jpg", "status":
-  "Vendu", "showAddress": false},
-  {"id":4,"name": "El Anber DB","address":"inconnu",
-  "image":"../../assets/images/R4.jpg", "status": "En Construction", "showAddress": true}
+  "residence": [
+    {
+      "name": "El fel DB",
+      "address": "Borj Cedria updated",
+      "status": "Disponible",
+      "image": "../../assets/images/R1.jpg",
+      "showAddress": false,
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "name": "El yasmine DB",
+      "address": "Ezzahra",
+      "image": "../../assets/images/R2.jpg",
+      "status": "Disponible",
+      "showAddress": false
+    },
+    {
+      "id": "3",
+      "name": "El Arij DB",
+      "address": "Rades",
+      "image": "../../assets/images/R3.jpg",
+      "status": "Vendu",
+      "showAddress": false
+    },
+    {
+      "id": "4",
+      "name": "El Anber DB",
+      "address": "inconnu",
+      "image": "../../assets/images/R4.jpg",
+      "status": "En Construction",
+      "showAddress": true
+    },
+    {
+      "name": "abc Updated",
+      "address": "abc",
+      "status": false,
+      "image": "../../assets/images/R2.jpg",
+      "showAddress": false,
+      "id": "91c8"
+    }
   ],
   "apartment": []
 }
