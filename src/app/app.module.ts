@@ -14,6 +14,8 @@ import { ResidenceDetailsComponent } from './residence-details/residence-details
 import { AddResidenceComponent } from './add-residence/add-residence.component';
 import { UpdateResidenceComponent } from './update-residence/update-residence.component';
 import { AddApartmentComponent } from './add-apartment/add-apartment.component';
+import { ListMatchsComponent } from './list-matchs/list-matchs.component';
+import { AddMatchComponent } from './add-match/add-match.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { AddApartmentComponent } from './add-apartment/add-apartment.component';
     ResidenceDetailsComponent,
     AddResidenceComponent,
     UpdateResidenceComponent,
-    AddApartmentComponent
+    AddApartmentComponent,
+    ListMatchsComponent,
+    AddMatchComponent
   ],
   imports: [
     BrowserModule,

@@ -8,11 +8,15 @@ import { ResidenceDetailsComponent } from './residence-details/residence-details
 import { AddResidenceComponent } from './add-residence/add-residence.component';
 import { UpdateResidenceComponent } from './update-residence/update-residence.component';
 import { AddApartmentComponent } from './add-apartment/add-apartment.component';
+import { ListMatchsComponent } from './list-matchs/list-matchs.component';
+import { AddMatchComponent } from './add-match/add-match.component';
 
 const routes: Routes= [
   { path:'', redirectTo:'home', pathMatch:'full' },
   { path:'home', component: HomeComponent },
   { path:'residence', component: ResidenceComponent},
+  { path:'match/list/:id', component: ListMatchsComponent },
+  { path:'match/add/:id', component: AddMatchComponent },
   { path:'apartment/add', component: AddApartmentComponent},
   { path:'residence/add', component: AddResidenceComponent },
   { path:'residence/details/:id', component: ResidenceDetailsComponent },

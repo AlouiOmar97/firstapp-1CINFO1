@@ -1,0 +1,33 @@
+<div class="container">
+    <h1>Add Match</h1>
+    <div>
+        <form [formGroup]="addGroupForm">
+        <div class="mb-3">
+            <label for="exampleInputName1" class="form-label">Label</label>
+            <input type="text" class="form-control" formControlName="label" id="exampleInputName1">
+            <p class="alert alert-danger m-2" *ngIf="label?.errors?.['required'] && label?.touched" >Name is required.</p>
+            <p class="alert alert-danger m-2" *ngIf="label?.errors?.['minlength'] && label?.touched" >Name must have at least 3 characters.</p>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputAddress1" class="form-label">Date</label>
+            <input type="date" class="form-control" formControlName="date" id="exampleInputAddress1">
+            <p class="alert alert-danger m-2" *ngIf="date?.errors?.['required'] && date?.touched" >Date is required.</p>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputAddress1" class="form-label">Team 1</label>
+            <input type="text" class="form-control" formControlName="team1" id="exampleInputAddress1">
+            <p class="alert alert-danger m-2" *ngIf="team1?.errors?.['required'] && team1?.touched" >Team 1 is required.</p>
+                        <p class="alert alert-danger m-2" *ngIf="team1?.errors?.['pattern'] && team1?.touched" >Team 1 must have an uppercase characters  as 1.</p>
+
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputAddress1" class="form-label">Team 2</label>
+            <input type="text" class="form-control" formControlName="team2" id="exampleInputAddress1">
+            <p class="alert alert-danger m-2" *ngIf="team2?.errors?.['required'] && team2?.touched" >Team 2 is required.</p>
+            <p class="alert alert-danger m-2" *ngIf="team2?.errors?.['pattern'] && team2?.touched" >Team 2 must have an uppercase characters  as 1.</p>
+        </div>
+        
+        <button type="submit" class="btn btn-primary" [disabled]="addGroupForm.invalid" (click)="addGroup()" >Add</button>
+        </form>
+    </div>
+</div>

@@ -41,5 +41,66 @@
       "id": "91c8"
     }
   ],
-  "apartment": []
+  "apartment": [],
+  "group": [
+    {
+      "id": "1",
+      "name": "ABC",
+      "matchs": [
+        {
+          "id": "1",
+          "label": "label match",
+          "date": "2025-01-01",
+          "teams": {
+            "team1": "Team A",
+            "team2": "Team B"
+          },
+          "status": "En cours"
+        },
+        {
+          "id": "2",
+          "label": "label match",
+          "date": "2025-01-01",
+          "teams": {
+            "team1": "Team B",
+            "team2": "Team A"
+          },
+          "status": "En cours"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "ABC",
+      "matchs": [
+        {
+          "id": "1",
+          "label": "label match",
+          "date": "2025-01-01",
+          "teams": {
+            "team1": "Team A",
+            "team2": "Team B"
+          },
+          "status": "En cours"
+        },
+        {
+          "id": "2",
+          "label": "label match",
+          "date": "2025-01-01",
+          "teams": {
+            "team1": "Team B",
+            "team2": "Team A"
+          },
+          "status": "En cours"
+        },
+        {
+          "label": "ABcc",
+          "date": "2025-01-01",
+          "status": "En cours",
+          "team1": "AAA",
+          "team2": "CCC"
+        }
+      ]
+    }
+  ]
 }

@@ -1,0 +1,9 @@
+<div class="container">
+    <div *ngFor="let match of matchsList; let i=index;">
+        <p><b>Match {{ i + 1 }} : </b></p>
+        <p><b>Date : </b> {{ match.date }} </p>
+        <p><b>Teams : </b></p>
+        <p><b> Team 1: </b> {{ match.teams.team1 }} </p>
+        <p><b> Team 2: </b> {{ match.teams.team2 }} </p>
+    </div>
+</div>

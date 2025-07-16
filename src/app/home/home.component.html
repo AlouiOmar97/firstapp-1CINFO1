@@ -1,8 +1,21 @@
 <div class="container">
+    <div class="row">
+        <div class="col-6"><b>Id</b></div>
+        <div class="col-6"><b>Name</b></div><hr>
+        <div class="row" *ngFor="let group of listGroup">
+            <div class="col-6"> {{ group.id}} </div>
+            <div class="col-6"> {{ group.name }} 
+                <a [routerLink]="['/match/add/', group.id]" class="btn btn-primary" >Add Match</a>
+                <a [routerLink]="['/match/list/', group.id]" class="btn btn-primary" >Display Matchs</a>
+            </div><hr>
+        </div>
+    </div>
+   <!--
     <h1>Home Page</h1>
     <p *ngIf="x"> {{ msg + ' 1CINFO1' }} </p>
     <p> {{ 5 + 2 + getA() }} </p>
     <p> {{ text }} </p>
     <input type="text" class="form-control" [(ngModel)]="text" >
     <button class="btn btn-primary" (click)="fillText()" [disabled]="x" >Click me</button>
+-->
 </div>
